@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>شركاؤنا | بيت النباتات</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .partner-card {
+      background: #fff;
+      border: 1.5px solid var(--green-pale);
+      border-radius: 20px;
+      padding: 30px 24px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .partner-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .partner-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--green-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .partner-name {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--green-dark);
+    }
+
+    .partner-desc {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    .partner-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 4px;
+      padding: 9px 22px;
+      background: var(--green-main);
+      color: #fff !important;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .partner-link:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    
+    .cta-banner {
+      background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+      border-radius: 24px;
+      padding: 48px 40px;
+      text-align: center;
+      color: #fff;
+      margin-top: 64px;
+    }
+    .cta-banner h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .cta-banner p {
+      opacity: 0.85;
+      font-size: 0.95rem;
+      margin-bottom: 28px;
+      max-width: 520px;
+      margin-inline: auto;
+    }
+    .cta-banner .steps {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+    .step-pill {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: var(--radius-full);
+      padding: 8px 18px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    
+    .contact-card {
+      background: rgba(255,255,255,0.12);
+      border: 1.5px solid rgba(255,255,255,0.25);
+      border-radius: 20px;
+      padding: 32px;
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: right;
+    }
+    .contact-card label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 6px;
+      margin-top: 16px;
+    }
+    .contact-card label:first-child { margin-top: 0; }
+    .contact-card input,
+    .contact-card select,
+    .contact-card textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.12);
+      border: 1.5px solid rgba(255,255,255,0.25);
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-family: var(--font-arabic);
+      font-size: 0.9rem;
+      color: #fff;
+      outline: none;
+      direction: rtl;
+      transition: border 0.2s;
+      box-sizing: border-box;
+    }
+    .contact-card input::placeholder,
+    .contact-card textarea::placeholder { color: rgba(255,255,255,0.45); }
+    .contact-card input:focus,
+    .contact-card select:focus,
+    .contact-card textarea:focus { border-color: rgba(255,255,255,0.7); }
+    .contact-card select option { color: var(--text-dark); background: #fff; }
+    .contact-card textarea { resize: none; height: 90px; }
+
+    .send-btn {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px;
+      background: #fff;
+      color: var(--green-dark);
+      border: none;
+      border-radius: var(--radius-full);
+      font-family: var(--font-arabic);
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .send-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+    .success-msg {
+      display: none;
+      background: rgba(255,255,255,0.15);
+      border-radius: 14px;
+      padding: 18px;
+      text-align: center;
+      margin-top: 16px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <header class="navbar">
+    <div class="nav-logo">
+      <img src="logo.jpg" alt="بيت النباتات" class="logo-img">
+      <span class="logo-text">بيت النباتات</span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">الرئيسية</a>
+      <a href="products.html">المنتجات</a>
+      <a href="about.html">من نحن</a>
+      <a href="feedback.html"> تقييم</a>
+      <a href="partners.html" class="active"> شركاؤنا</a>
+      <a href="https://www.instagram.com/house_flowers25" target="_blank" class="instagram-nav-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        انستقرام
+      </a>
+      <a href="cart.html" class="cart-link">
+        🛒 السلة <span class="cart-count" id="cartCount">0</span>
+      </a>
+    </nav>
+  </header>
+
+  
+  <section class="page-hero">
+    <h1>شركاؤنا</h1>
+    <p>ما لقيت اللي تبين؟ شوفي متاجرنا الشريكة — نضمن لك نفس الجودة والاهتمام</p>
+  </section>
+
+  
+  <section class="section">
+    <div class="section-header">
+      <span class="section-tag">متاجر موثوقة</span>
+      <h2 class="section-title">متاجرنا الشريكة</h2>
+      <p style="color:var(--text-soft);font-size:0.92rem;margin-top:8px;">
+        كل متجر اخترناه بعناية — نفس حبنا للطبيعة، ونفس معاييرنا في الجودة 🌿
+      </p>
+    </div>
+
+    
+    <div class="partners-grid" id="partnersGrid">
+
+      <div class="partner-card">
+  <div class="partner-icon">🌺</div>
+  <div class="partner-name">ساق — نباتات داخلية</div>
+  <div class="partner-desc">متجر متخصص في نباتات الداخل — تشكيلة واسعة من النباتات المنزلية بجودة عالية وتوصيل لجميع أنحاء المملكة</div>
+  <a href="https://saqplants.com/ar/" target="_blank" class="partner-link">
+    🔗 زيارة المتجر
+  </a>
+</div>
+
+     <div class="partner-card">
+  <div class="partner-icon">🌺</div>
+  <div class="partner-name">حدائق المهرة</div>
+  <div class="partner-desc">متجر سعودي متخصص في النباتات والحدائق — تشكيلة متنوعة من النباتات الداخلية والخارجية مع خدمة توصيل للمنزل</div>
+  <a href="https://muhrah-gardens.com/" target="_blank" class="partner-link">
+    🔗 زيارة المتجر
+  </a>
+</div>
+
+     
+
+    </div>
+
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="cta-banner">
+      <h2>💌 هل أنتِ صاحبة متجر؟</h2>
+      <p>إذا تبين تتعاونين معنا وتوصلين عملاؤنا لمنتجاتك، تواصلي معنا وراح نرد عليك باقرب وقت</p>
+
+      <div class="steps">
+        <div class="step-pill">📝 أرسلي بيانات متجرك</div>
+        <div class="step-pill">✅ نراجع الطلب</div>
+        <div class="step-pill">🤝 نتواصل معك خلال 48 ساعة</div>
+      </div>
+
+      <div class="contact-card">
+        <label>اسم المتجر *</label>
+        <input type="text" id="partnerStoreName" placeholder="مثال: متجر الورود" />
+
+        <label>رابط المتجر أو الانستقرام *</label>
+        <input type="url" id="partnerLink" placeholder="https://..." />
+
+        <label>نوع المنتجات</label>
+        <select id="partnerCategory">
+          <option value="">اختر التصنيف</option>
+          <option value="plants">نباتات وزهور</option>
+          <option value="pots">أصص وديكور</option>
+          <option value="soil">تربة وسماد</option>
+          <option value="tools">أدوات حدائق</option>
+          <option value="other">أخرى</option>
+        </select>
+
+        <label>رسالة إضافية (اختياري)</label>
+        <textarea id="partnerMsg" placeholder="أي تفاصيل تودين إضافتها..."></textarea>
+
+        <div id="partnerError" style="display:none;color:#ffb3b3;font-size:0.83rem;margin-top:8px;"></div>
+
+        <button class="send-btn" onclick="submitPartner()">
+          إرسال طلب التعاون 🌿
+        </button>
+
+        <div class="success-msg" id="partnerSuccess">
+          ✅ وصلنا طلبك! راح نتواصل معك قريباً 💚
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-leaf">🌿</span>
+        <span class="logo-text">بيت النباتات</span>
+        <p>متجرك الأول للنباتات الطبيعية</p>
+      </div>
+      <div class="footer-links">
+        <h4>روابط سريعة</h4>
+        <a href="index.html">الرئيسية</a>
+        <a href="products.html">المنتجات</a>
+        <a href="about.html">من نحن</a>
+        <a href="feedback.html">تقييم</a>
+        <a href="cart.html">السلة</a>
+      </div>
+      <div class="footer-contact">
+        <h4>تواصل معنا</h4>
+        <p>📧 info@botanicalhouse.sa</p>
+        <p>📞 +966 55 000 0000</p>
+        <p>📍 الرياض، المملكة العربية السعودية</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 بيت النباتات · جميع الحقوق محفوظة</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script>
+    function submitPartner() {
+      const name    = document.getElementById('partnerStoreName').value.trim();
+      const link    = document.getElementById('partnerLink').value.trim();
+      const errEl   = document.getElementById('partnerError');
+      const successEl = document.getElementById('partnerSuccess');
+
+      errEl.style.display = 'none';
+
+      if (!name) {
+        errEl.textContent = '⚠️ يرجى كتابة اسم المتجر';
+        errEl.style.display = 'block';
+        return;
+      }
+      if (!link) {
+        errEl.textContent = '⚠️ يرجى إدخال رابط المتجر أو الانستقرام';
+        errEl.style.display = 'block';
+        return;
+      }
+
+      const requests = JSON.parse(localStorage.getItem('bh_partner_requests') || '[]');
+      requests.unshift({
+        name,
+        link,
+        category: document.getElementById('partnerCategory').value,
+        msg: document.getElementById('partnerMsg').value.trim(),
+        date: new Date().toLocaleDateString('ar-SA')
+      });
+      localStorage.setItem('bh_partner_requests', JSON.stringify(requests));
+
+      document.getElementById('partnerStoreName').value = '';
+      document.getElementById('partnerLink').value = '';
+      document.getElementById('partnerCategory').value = '';
+      document.getElementById('partnerMsg').value = '';
+      successEl.style.display = 'block';
+      setTimeout(() => { successEl.style.display = 'none'; }, 5000);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>المنتجات | بيت النباتات</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-logo">
+       <img src="logo.jpg" alt="بيت النباتات" class="logo-img">
+<span class="logo-text">بيت النباتات</span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">الرئيسية</a>
+      <a href="products.html" class="active">المنتجات</a>
+      <a href="about.html">من نحن</a>
+      <a href="feedback.html"> تقييم</a>
+      <a href="partners.html"> شركاؤنا</a>
+      <a href="https://www.instagram.com/house_flowers25" target="_blank" class="instagram-nav-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        انستقرام
+      </a>
+      <a href="cart.html" class="cart-link">
+        🛒 السلة <span class="cart-count" id="cartCount">0</span>
+      </a>
+    </nav>
+  </header>
+
+   <section class="page-hero"> 
+  <h1>🌿 متجرنا</h1>
+  <p>اكتشف مجموعتنا الواسعة من النباتات الطبيعية والأعشاب</p> 
+  </section>
+
+  
+  <section class="filter-bar">
+    <button class="filter-btn active" onclick="filterProducts('all', this)">الكل</button>
+    <button class="filter-btn" onclick="filterProducts('indoor', this)">🌱نباتات داخلية</button>
+    <button class="filter-btn" onclick="filterProducts('herbs', this)">🌿 أعشاب</button>
+    <button class="filter-btn" onclick="filterProducts('flowers', this)">🌸 زهور</button>
+    <button class="filter-btn" onclick="filterProducts('succulents', this)">🌵 عصاريات</button>
+  </section>
+
+
+  <section class="section">
+    <div class="products-grid" id="allProducts"></div>
+  </section>
+
+  
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-leaf">🌿</span>
+        <span class="logo-text">بيت النباتات</span>
+        <p>متجرك الأول للنباتات الطبيعية</p>
+      </div>
+      <div class="footer-links">
+        <h4>روابط سريعة</h4>
+        <a href="index.html">الرئيسية</a>
+        <a href="products.html">المنتجات</a>
+        <a href="cart.html">السلة</a>
+      </div>
+      <div class="footer-contact">
+        <h4>تواصل معنا</h4>
+        <p>📧 info@botanicalhouse.sa</p>
+        <p>📞 +966 55 000 0000</p>
+        <p>📍 الرياض، المملكة العربية السعودية</p>
+        <a href="https://www.instagram.com/house_flowers25?igsh=a3NpcDI3Zm55aTQ3&utm_source=qr" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;color:#e1306c;font-weight:600;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          انستقرام
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 بيت النباتات · جميع الحقوق محفوظة</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <!-- قسم الشات بوت -->
+<style>
+  .chat-fab {
+    position: fixed; bottom: 28px; left: 28px;
+    width: 60px; height: 60px; border-radius: 50%;
+    background: linear-gradient(135deg, #2d6a4f, #1a3d2b);
+    color: #fff; font-size: 1.6rem; border: none;
+    cursor: pointer; box-shadow: 0 8px 24px rgba(26,61,43,0.4);
+    z-index: 1000; transition: all 0.3s;
+    display: flex; align-items: center; justify-content: center;
+    animation: pulse-chat 2.5s ease-in-out infinite;
+  }
+  .chat-fab:hover { transform: scale(1.12); }
+  @keyframes pulse-chat {
+    0%, 100% { box-shadow: 0 8px 24px rgba(26,61,43,0.4); }
+    50% { box-shadow: 0 8px 32px rgba(26,61,43,0.6), 0 0 0 8px rgba(45,106,79,0.1); }
+  }
+  .chat-fab .chat-badge {
+    position: absolute; top: -4px; right: -4px;
+    width: 18px; height: 18px; background: #e74c3c;
+    border-radius: 50%; border: 2px solid #fff;
+    font-size: 0.6rem; display: flex; align-items: center;
+    justify-content: center; font-weight: 700;
+  }
+  .chatbot-window {
+    position: fixed; bottom: 100px; left: 28px; width: 340px;
+    max-height: 500px; background: #fff; border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(26,61,43,0.25); z-index: 1001;
+    display: flex; flex-direction: column; overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    transform-origin: bottom left;
+  }
+  .chatbot-window.hidden {
+    transform: scale(0.7) translateY(20px);
+    opacity: 0; pointer-events: none;
+  }
+  .chat-header {
+    background: linear-gradient(135deg, #1a3d2b, #2d6a4f);
+    color: #fff; padding: 16px 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .chat-avatar {
+    width: 40px; height: 40px; background: rgba(255,255,255,0.2);
+    border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; font-size: 1.3rem;
+  }
+  .chat-header-info h4 { font-size: 0.95rem; font-weight: 700; margin: 0; }
+  .chat-header-info p { font-size: 0.78rem; opacity: 0.8; margin: 0; }
+  .chat-close-btn {
+    margin-right: auto; background: none; border: none;
+    color: rgba(255,255,255,0.8); font-size: 1.2rem;
+    cursor: pointer; padding: 4px 8px; border-radius: 6px;
+  }
+  .chat-close-btn:hover { background: rgba(255,255,255,0.15); color: #fff; }
+  .chat-messages {
+    flex: 1; overflow-y: auto; padding: 16px;
+    display: flex; flex-direction: column; gap: 12px;
+    max-height: 340px; background: #f9fafb;
+  }
+  .chat-msg {
+    max-width: 82%; padding: 10px 14px; border-radius: 16px;
+    font-size: 0.88rem; line-height: 1.5; white-space: pre-line;
+    animation: msgIn 0.3s ease;
+  }
+  @keyframes msgIn {
+    from { transform: translateY(8px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  .chat-msg.bot {
+    background: #fff; color: #1a3d2b;
+    border-radius: 16px 16px 16px 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06); align-self: flex-start;
+  }
+  .chat-msg.user {
+    background: #2d6a4f; color: #fff;
+    border-radius: 16px 16px 4px 16px; align-self: flex-end;
+  }
+  .quick-reply-btn {
+    background: #d8f3dc; color: #1a3d2b;
+    border: 1px solid #b7e4c7; border-radius: 20px;
+    padding: 6px 14px; font-size: 0.8rem; font-weight: 600;
+    cursor: pointer; transition: all 0.2s; font-family: inherit;
+  }
+  .quick-reply-btn:hover { background: #2d6a4f; color: #fff; }
+  .chat-powered {
+    text-align: center; padding: 6px;
+    font-size: 0.72rem; color: #6b8c77; background: #f9fafb;
+  }
+</style>
+
+<button class="chat-fab" onclick="toggleChat()" id="chatFab">
+  🌿
+  <span class="chat-badge">1</span>
+</button>
+
+<div class="chatbot-window hidden" id="chatbotWindow">
+  <div class="chat-header">
+    <div class="chat-avatar">🌿</div>
+    <div class="chat-header-info">
+      <h4>مساعد بيت النباتات</h4>
+      <p>متصل الآن · يرد فوراً</p>
+    </div>
+    <button class="chat-close-btn" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-powered">مساعد بيت النباتات 🌿</div>
+</div>
+
+<script>
+
+let chatOpen = false;
+let chatStarted = false;
+
+function toggleChat() {
+  chatOpen = !chatOpen;
+  const win = document.getElementById("chatbotWindow");
+  const fab = document.getElementById("chatFab");
+  if (chatOpen) {
+    win.classList.remove("hidden");
+    fab.innerHTML = "✕";
+    if (!chatStarted) {
+      chatStarted = true;
+      setTimeout(startChat, 300);
+    }
+  } else {
+    win.classList.add("hidden");
+    fab.innerHTML = '🌿<span class="chat-badge">1</span>';
+  }
+}
+
+function startChat() {
+  botMsg("مرحباً! 🌱 أنا مساعدك في بيت النباتات.");
+  setTimeout(() => showMainMenu(), 600);
+}
+
+function showMainMenu() {
+  botMsg("كيف أقدر أساعدك اليوم؟ اختر من القائمة:");
+  showOptions([
+    { label: "🌿 ساعدني أختار نبتة",   action: () => flowPlantHelper_step1() },
+    { label: "📦 معلومات التوصيل",       action: () => flowDelivery() },
+    { label: "🏷️ العروض والخصومات",     action: () => flowOffers() },
+    { label: "🔍 تصفح حسب الفئة",       action: () => flowBrowseCategory() },
+    { label: "💚 سياسة الضمان",          action: () => flowWarranty() },
+    { label: "📞 تواصل معنا",            action: () => flowContact() },
+  ]);
+}
+
+function flowPlantHelper_step1() {
+  userMsg("🌿 ساعدني أختار نبتة");
+  botMsg("بكل سرور! 🌱 خليني أساعدك تلقى النبتة المثالية.");
+  setTimeout(() => {
+    botMsg("أين ستضع النبتة؟");
+    showOptions([
+      { label: "🏠 داخل المنزل",   action: () => flowPlantHelper_step2("indoor") },
+      { label: "🌞 خارج المنزل",   action: () => flowPlantHelper_step2("outdoor") },
+      { label: "🏢 في المكتب",     action: () => flowPlantHelper_step2("office") },
+      { label: "🛏️ غرفة النوم",    action: () => flowPlantHelper_step2("bedroom") },
+    ]);
+  }, 400);
+}
+
+function flowPlantHelper_step2(location) {
+  const labels = { indoor:"داخل المنزل", outdoor:"خارج المنزل", office:"في المكتب", bedroom:"غرفة النوم" };
+  userMsg(labels[location]);
+  setTimeout(() => {
+    botMsg("ما الغرض الأساسي من النبتة؟");
+    showOptions([
+      { label: "🎨 للديكور والجمال",  action: () => flowPlantHelper_step3(location, "deco") },
+      { label: "💨 لتنقية الهواء",    action: () => flowPlantHelper_step3(location, "air") },
+      { label: "🌸 للعطر والرائحة",   action: () => flowPlantHelper_step3(location, "scent") },
+      { label: "🌿 للاستخدام الطبي",  action: () => flowPlantHelper_step3(location, "medical") },
+      { label: "🍽️ للطهي والأكل",    action: () => flowPlantHelper_step3(location, "cooking") },
+    ]);
+  }, 400);
+}
+
+function flowPlantHelper_step3(location, purpose) {
+  const labels = { deco:"للديكور", air:"لتنقية الهواء", scent:"للعطر", medical:"للاستخدام الطبي", cooking:"للطهي" };
+  userMsg(labels[purpose]);
+  setTimeout(() => {
+    botMsg("كم وقتك لعناية النبتة أسبوعياً؟");
+    showOptions([
+      { label: "⚡ أقل من 5 دقائق",   action: () => showPlantResults(location, purpose, "lazy") },
+      { label: "🕐 10–15 دقيقة",      action: () => showPlantResults(location, purpose, "medium") },
+      { label: "⏰ أكثر من 15 دقيقة", action: () => showPlantResults(location, purpose, "active") },
+    ]);
+  }, 400);
+}
+
+function showPlantResults(location, purpose, care) {
+  userMsg(care === "lazy" ? "أقل من 5 دقائق" : care === "medium" ? "10–15 دقيقة" : "أكثر من 15 دقيقة");
+  let results = [];
+  if (purpose === "cooking")       results = PRODUCTS.filter(p => p.category === "herbs");
+  else if (purpose === "medical")  results = PRODUCTS.filter(p => p.category === "herbs" || p.nameEn === "Aloe Vera");
+  else if (purpose === "scent")    results = PRODUCTS.filter(p => ["Lavender","Arabian Jasmine","Damask Rose","Rosemary"].includes(p.nameEn));
+  else if (purpose === "air")      results = PRODUCTS.filter(p => ["Monstera Deliciosa","Bamboo Palm","Peace Lily","Golden Pothos","Fiddle Leaf Fig","Philodendron"].includes(p.nameEn));
+  else if (purpose === "deco")     results = PRODUCTS.filter(p => p.category === "succulents" || p.category === "flowers" || p.nameEn === "Fiddle Leaf Fig");
+  if (care === "lazy") results = results.filter(p => p.care.some(c => c.includes("شهر") || c.includes("أسبوعين") || c.includes("مرة أسبوعياً")));
+  if (location === "outdoor")      results = results.filter(p => p.category !== "indoor");
+  if (results.length === 0) results = PRODUCTS.slice(0, 3);
+  results = results.slice(0, 3);
+  setTimeout(() => {
+    botMsg("🌟 إليك أفضل الخيارات المناسبة لك:");
+    results.forEach((p, i) => {
+      setTimeout(() => { botMsg(`${i+1}. ${p.name}\n💰 السعر: ${p.price} ريال\n📝 ${p.description}`); }, i * 300);
+    });
+    setTimeout(() => {
+      botMsg("تبي تعرف أكثر عن أي نبتة؟");
+      showOptions([
+        ...results.map(p => ({ label: `🌿 ${p.name}`, action: () => showPlantDetail(p) })),
+        { label: "🏠 القائمة الرئيسية", action: () => { userMsg("القائمة الرئيسية"); setTimeout(showMainMenu, 300); } }
+      ]);
+    }, results.length * 300 + 400);
+  }, 400);
+}
+
+function showPlantDetail(p) {
+  userMsg(`🌿 ${p.name}`);
+  setTimeout(() => {
+    botMsg(`🌿 ${p.name}\n💰 ${p.price} ريال | ${p.categoryLabel}\n\n📝 ${p.description}\n\n🌱 ${p.care.join(" | ")}\n\n✨ ${p.benefits}`);
+    setTimeout(() => {
+      showOptions([
+        { label: "🏠 القائمة الرئيسية", action: () => { userMsg("القائمة الرئيسية"); setTimeout(showMainMenu, 300); } }
+      ]);
+    }, 400);
+  }, 400);
+}
+
+function flowDelivery() {
+  userMsg("📦 معلومات التوصيل");
+  setTimeout(() => {
+    botMsg("🚚 خدمات التوصيل المتاحة:");
+    setTimeout(() => { botMsg("📦 أرامكس\n⏱️ المدة: 2–4 أيام عمل\n💰 الرسوم: 25 ريال"); }, 300);
+    setTimeout(() => { botMsg("📦 سبل\n⏱️ المدة: 3–5 أيام عمل\n💰 الرسوم: 20 ريال"); }, 600);
+    setTimeout(() => {
+      botMsg("التوصيل لجميع مناطق المملكة 🇸🇦");
+      showOptions([{ label: "🏠 القائمة الرئيسية", action: () => { userMsg("القائمة الرئيسية"); setTimeout(showMainMenu, 300); } }]);
+    }, 900);
+  }, 400);
+}
+
+function flowOffers() {
+  userMsg("🏷️ العروض والخصومات");
+  setTimeout(() => {
+    botMsg("🎉 العروض الحالية:");
+    setTimeout(() => { botMsg("✅ منتجان إلى 4 منتجات\n→ خصم 15% تلقائي"); }, 300);
+    setTimeout(() => { botMsg("✅ 5 منتجات فأكثر\n→ خصم 20% تلقائي"); }, 600);
+    setTimeout(() => { botMsg("✅ كود WELCOME\n→ خصم 10% على أول طلب فقط 🎁"); }, 900);
+    setTimeout(() => {
+      showOptions([{ label: "🏠 القائمة الرئيسية", action: () => { userMsg("القائمة الرئيسية"); setTimeout(showMainMenu, 300); } }]);
+    }, 1200);
+  }, 400);
+}
+
+function flowBrowseCategory() {
+  userMsg("🔍 تصفح حسب الفئة");
+  setTimeout(() => {
+    botMsg("اختر الفئة:");
+    showOptions([
+      { label: "🌿 نباتات داخلية",    action: () => showCategory("indoor",    "نباتات داخلية") },
+      { label: "🌸 زهور",             action: () => showCategory("flowers",   "زهور") },
+      { label: "🌵 عصاريات",          action: () => showCategory("succulents","عصاريات") },
+      { label: "🌱 أعشاب",            action: () => showCategory("herbs",     "أعشاب") },
+      { label: "🏠 القائمة الرئيسية", action: () => { userMsg("القائمة الرئيسية"); setTimeout(showMainMenu, 300); } }
+    ]);
+  }, 400);
+}
+
+function showCategory(cat, label) {
+  userMsg(label);
+  const list = PRODUCTS.filter(p => p.category === cat);
+  setTimeout(() => {
+    botMsg(`🌿 ${label} (${list.length} منتج):\n` + list.map(p => `• ${p.name} — ${p.price} ريال`).join("\n"));
+    setTimeout(() => {
+      const opts = list.slice(0, 5).map(p => ({ label: `🌿 ${p.name}`, action: () => showPlantDetail(p) }));
+      opts.push({ label: "🏠 القائمة الرئيسية", action: () => { userMsg("القائمة الرئيسية"); setTimeout(showMainMenu, 300); } });
+      showOptions(opts);
+    }, 400);
+  }, 400);
+}
+
+function flowWarranty() {
+  userMsg("💚 سياسة الضمان");
+  setTimeout(() => {
+    botMsg("💚 ضمان 7 أيام كاملة\nإذا وصلتك النبتة تالفة نستبدلها مجاناً.");
+    setTimeout(() => { botMsg("✅ نباتات طبيعية 100% خالية من المواد الكيميائية\n✅ مع كل نبتة دليل عناية كامل"); }, 400);
+    setTimeout(() => {
+      showOptions([{ label: "🏠 القائمة الرئيسية", action: () => { userMsg("القائمة الرئيسية"); setTimeout(showMainMenu, 300); } }]);
+    }, 800);
+  }, 400);
+}
+
+function flowContact() {
+  userMsg("📞 تواصل معنا");
+  setTimeout(() => {
+    botMsg("📷 انستقرام: house_flowers25@\n📧 info@botanicalhouse.sa\n📞 +966 55 000 0000\n📍 الرياض، المملكة العربية السعودية");
+    setTimeout(() => {
+      showOptions([{ label: "🏠 القائمة الرئيسية", action: () => { userMsg("القائمة الرئيسية"); setTimeout(showMainMenu, 300); } }]);
+    }, 400);
+  }, 400);
+}
+
+function botMsg(text) {
+  const msgs = document.getElementById("chatMessages");
+  const div = document.createElement("div");
+  div.className = "chat-msg bot";
+  div.style.whiteSpace = "pre-line";
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function userMsg(text) {
+  const msgs = document.getElementById("chatMessages");
+  const div = document.createElement("div");
+  div.className = "chat-msg user";
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function showOptions(options) {
+  const msgs = document.getElementById("chatMessages");
+  const wrap = document.createElement("div");
+  wrap.style.cssText = "display:flex;flex-wrap:wrap;gap:7px;margin-top:2px;";
+  options.forEach(opt => {
+    const btn = document.createElement("button");
+    btn.className = "quick-reply-btn";
+    btn.textContent = opt.label;
+    btn.onclick = () => {
+      wrap.querySelectorAll("button").forEach(b => { b.disabled = true; b.style.opacity = "0.45"; b.style.cursor = "default"; });
+      opt.action();
+    };
+    wrap.appendChild(btn);
+  });
+  msgs.appendChild(wrap);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+</script>
+</body>
+</html>
